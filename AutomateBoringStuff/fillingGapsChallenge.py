@@ -18,8 +18,6 @@ for file in sorted(prefix_files):
             break
 print(missed_files)
 
-missing_place = int(re.search('\d', missed_files[0]).group(0))
-for index in range(missing_place - 1, len(prefix_files)):
-    os.rename(r'.\\' + prefix_files[index], r'.\\{0}{1}.txt'.format(prefix, str(index + 1)))
-renamed_files = [f for f in os.listdir(work_dir) if prefix in os.path.basename('\\%s' % f)]
-print(renamed_files)
+for file in missed_files:
+    created_file = open(file, "w")
+    created_file.close()
