@@ -45,7 +45,7 @@ def print_singly_linked_list(node, sep):
 #     int data
 #     SinglyLinkedListNode next
 #
-#
+
 def reversePrint(head):
     all_elements = []
     current = head
