@@ -14,6 +14,9 @@ class Element(object):
         self.value = value
         self.next = None
 
+    def __repr__(self):
+        return 'LinkedList({}, {})'.format(self.value, repr(self.next))
+
 
 class LinkedList(object):
     def __init__(self, head=None):
