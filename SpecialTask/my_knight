@@ -1,0 +1,65 @@
+class CellSrc:
+    # Source Cell Class
+    def __init__(self, src, destination=0):
+        self.x = src % 8
+        self.y = src // 8
+        self.destination = destination
+
+
+class CellDest:
+    # Destination Cell Class
+    def __init__(self, dest):
+        self.x = dest % 8
+        self.y = dest // 8
+
+
+def exists_on_board(x, y):
+    # Checks if element exists on the chess board
+    if 0 <= x <= 7 and 0 <= y <= 7:
+        return True
+    return False
+
+
+def solution(src, dest):
+    # Determine all possible movements of knight:
+    dx = [2, 2, -2, -2, 1, 1, -1, -1]
+    dy = [1, -1, 1, -1, 2, -2, 2, -2]
+
+    # Creating empty queue and put there knight starting position
+    starting_position = (CellSrc(src))
+    destination_position = (CellDest(dest))
+    queue = [starting_position]
+
+    # Define all cells on the board as not visited
+    visited_cells = [[False for y in range(8)] for x in range(8)]
+
+    # Mark started position as visited
+    visited_cells[starting_position.y][starting_position.x] = True
+
+    # Loop until we have element in the queue
+    while len(queue) > 0:
+
+        # Read element from queue and then empty queue
+        queue_element = queue[0]
+        queue.pop(0)
+
+        # If queue cell coordinates equal to destination coordinates
+        # return destination
+        if queue_element.x == destination_position.x and\
+                queue_element.y == destination_position.y:
+            return queue_element.destination
+
+        # Iterate through all possible movements:
+        for move_num in range(8):
+
+            x = queue_element.x + dx[move_num]
+            y = queue_element.y + dy[move_num]
+
+            # Check if new coordinates are on the board and not visited yet:
+            if exists_on_board(x, y) and not visited_cells[y][x]:
+                visited_cells[y][x] = True
+                queue.append(CellSrc(src=y * 8 + x, destination=queue_element.destination + 1))
+
+
+if __name__ == '__main__':
+    print(solution(src=56, dest=7))
