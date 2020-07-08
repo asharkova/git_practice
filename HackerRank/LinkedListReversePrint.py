@@ -23,36 +23,24 @@ class SinglyLinkedList:
             self.head = node
         else:
             self.tail.next = node
-
-
         self.tail = node
 
-def print_singly_linked_list(node, sep):
-    while node:
-        print(node.data, end='')
+    def print_singly_linked_list(node, sep):
+        while node:
+            print(node.data, end='')
 
-        node = node.next
+            node = node.next
 
-        if node:
-            print(sep, end='')
+            if node:
+                print(sep, end='')
 
-# Complete the reversePrint function below.
-
-#
-# For your reference:
-#
-# SinglyLinkedListNode:
-#     int data
-#     SinglyLinkedListNode next
-#
-
-def reversePrint(head):
-    all_elements = []
-    current = head
-    while current:
-        all_elements.append(str(current.data))
-        current = current.next
-    return '\n'.join(reversed(all_elements))
+    def reversePrint(head):
+        all_elements = []
+        current = head
+        while current:
+            all_elements.append(str(current.data))
+            current = current.next
+        return '\n'.join(reversed(all_elements))
 
 
 if __name__ == '__main__':
