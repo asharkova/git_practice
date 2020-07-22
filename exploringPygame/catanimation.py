@@ -10,9 +10,9 @@ DISPLAYSURF = pygame.display.set_mode((1000, 900), 0, 32)
 pygame.display.set_caption('Animation')
 
 WHITE = (255, 255, 255)
-catImg = pygame.image.load('C:/Users/Anna/PycharmProjects/sandBox/python_practice/my_projects/exploringPygame/downloaded/cat.png')
-sounds = ['C:/Users/Anna/PycharmProjects/sandBox/python_practice/my_projects/exploringPygame/downloaded/Meowing-cat-sound.mp3',
-          'C:/Users/Anna/PycharmProjects/sandBox/python_practice/my_projects/exploringPygame/downloaded/human_footstep_snow_002.mp3']
+catImg = pygame.image.load('C:/Users/Anna/PycharmProjects/sandBox/python_practice/exploringPygame/downloaded/cat.png')
+sounds = ['C:/Users/Anna/PycharmProjects/sandBox/python_practice/exploringPygame/downloaded/Meowing-cat-sound.mp3',
+          'C:/Users/Anna/PycharmProjects/sandBox/python_practice/exploringPygame/downloaded/human_footstep_snow_002.mp3']
 catx = 10
 caty = 10
 direction = 'right'
