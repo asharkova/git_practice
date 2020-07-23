@@ -73,7 +73,12 @@ class Graph(object):
         column numbers represent to nodes.
         Store the edge values in each spot,
         and a 0 if no edge exists."""
-        return []
+        node_from = [node.node_from for node in self.edges]
+        adjacency_matrix = [[0 for from_node_row in range(len(node_from)+1)] for node_number_column in range(len(self.nodes)+1)]
+        for edge in self.edges:
+            if edge.node_from and edge.node_to:
+                adjacency_matrix[edge.node_from.value][edge.node_to.value] = edge.value
+        return adjacency_matrix
 
 
 graph = Graph()
