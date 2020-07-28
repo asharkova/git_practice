@@ -234,8 +234,8 @@ pp.pprint(graph.dfs_names(2))
 # Depth First Search
 # ['London', 'Shanghai', 'Mountain View', 'San Francisco', 'Berlin', 'Sao Paolo']
 
-print("\nBreadth First Search")
-pp.pprint(graph.bfs_names(2))
+# print("\nBreadth First Search")
+# pp.pprint(graph.bfs_names(2))
 # test error reporting
 # pp.pprint(['Sao Paolo', 'Mountain View', 'San Francisco', 'London', 'Shanghai', 'Berlin'])
 
